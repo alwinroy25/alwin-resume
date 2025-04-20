@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/yourusername/alwin-resume.git'
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 script {
