@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: resume-deploy
+  labels:
+    app: resume
 spec:
   replicas: 1
   selector:
@@ -14,8 +16,7 @@ spec:
     spec:
       containers:
         - name: resume
-          image: REPLACE_ME_WITH_IMAGE
-          imagePullPolicy: Always
+          image: alwinroy/alwin-resume:14  # Ensure this matches the image you pushed
           ports:
             - containerPort: 80
 ---
@@ -28,6 +29,8 @@ spec:
   selector:
     app: resume
   ports:
-    - port: 80
+    - protocol: TCP
+      port: 80
       targetPort: 80
       nodePort: 30001
+
