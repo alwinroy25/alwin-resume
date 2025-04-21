@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: resume
-          image: alwin-resume:latest
+          image: REPLACE_ME_WITH_IMAGE
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
 ---
